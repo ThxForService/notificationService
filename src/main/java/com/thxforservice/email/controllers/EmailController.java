@@ -34,7 +34,7 @@ public class EmailController {
 
         return data;
     }
-
+//
     /**
      * 발급받은 인증코드와 사용자 입력 코드의 일치 여부 체크
      *
