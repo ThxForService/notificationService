@@ -2,11 +2,14 @@ package com.thxforservice.email.services;
 
 import com.thxforservice.email.controllers.EmailMessage;
 import com.thxforservice.email.entities.EmailHistory;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import java.util.HashMap;
@@ -54,7 +57,7 @@ public class EmailSendService {
         try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, false, "UTF-8");
-            mimeMessageHelper.setTo(message.getTo()); // 메일 수신자
+            mimeMessageHelper.setTo(message.getTo()); // 메일 수mi신자
             mimeMessageHelper.setSubject(message.getSubject());  // 메일 제목
             mimeMessageHelper.setText(text, true); // 메일 내용
             javaMailSender.send(mimeMessage);
@@ -72,7 +75,6 @@ public class EmailSendService {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-
         return false;
 
     }

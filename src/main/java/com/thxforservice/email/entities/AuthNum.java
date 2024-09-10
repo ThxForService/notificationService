@@ -1,8 +1,10 @@
 package com.thxforservice.email.entities;
 
-import jakarta.persistence.Id;
+
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+
 
 @Data
 @RedisHash(value="authNum", timeToLive = 180)

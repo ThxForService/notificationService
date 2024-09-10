@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: localhost
+    port: 1521
+    username: byby5583@gmail.com
+    password: zxc!1123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
