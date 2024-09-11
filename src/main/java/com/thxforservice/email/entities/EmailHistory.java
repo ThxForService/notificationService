@@ -33,24 +33,6 @@ public class EmailHistory {
     @Lob
     private String message;
 
-
-    @Column(name = "file_nm", length = 200)
-    private String fileNm;  // 원본 파일 이름
-
-    @Column(name = "saved_nm", length = 200)
-    private String savedNm;  // 저장된 파일 이름
-
-    @Column(name = "path_nm", length = 1000)
-    private String pathNm;  // 파일 경로
-
-    @Column(name = "filesize")
-    private Long filesize;  // 파일 크기 (바이트)
-
-    @CreatedDate
-    @Column(name = "file_created_at", updatable = false)
-    private LocalDateTime fileCreatedAt;  // 파일 생성일자
-
-
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;

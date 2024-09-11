@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 확정 안내</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .email-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #E2E2E2;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-image: url('https://ifh.cc/g/Cd1nBL.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50; /* 글씨 색상 */
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+
+
+        }
+        p {
+            font-size: 20px;
+            color: #black;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            padding-left: 30px;
+            position: relative;
+
+        }
+
+
+        dt {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        dd {
+            font-size: 14px;
+            color: black;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .auth-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            padding: 10px;
+            display: inline-block;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="email-container">
+
+    <div class="overlay"></div>
+
+    <h2>🍃Counseling Center</h2>
+
+    <p>여러분의 방문을 환영합니다😊<br></p>
+
+    <dl>
+        <dt>제목</dt>
+        <dd>상담 예약 확정 안내입니다.</dd>
+    </dl>
+
+    <dl>
+        <dt>내용</dt>
+        <dd th:utext="${message}"></dd>
+    </dl>
+
+    <dl>
+        <dt>예약 안내</dt>
+        <dd th:text="${authNum}" class="auth-code"></dd>
+    </dl>
+</div>
+
+</body>
+</html>
